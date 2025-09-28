@@ -75,4 +75,44 @@ $(document).ready(function() {
 
     bulmaSlider.attach();
 
+    // 3D Flow Visualization functionality
+    initializeVisualizationWidget();
+
 })
+
+// 3D Flow Visualization Widget Functions
+function initializeVisualizationWidget() {
+    // Add click event listeners to thumbnail items
+    $('.thumbnail-item').on('click', function() {
+        // Remove active class from all thumbnails
+        $('.thumbnail-item').removeClass('active');
+        
+        // Add active class to clicked thumbnail
+        $(this).addClass('active');
+        
+        // Get video and viser data from the clicked thumbnail
+        var videoSrc = $(this).data('video');
+        var viserSrc = $(this).data('viser');
+        var thumbnailLabel = $(this).find('.thumbnail-label').text();
+        
+        // Update video source
+        var videoElement = document.getElementById('main-video');
+        videoElement.src = './static/videos/' + videoSrc;
+        videoElement.load(); // Reload the video
+        
+        // Update video info
+        $('.video-title').text(thumbnailLabel + ' Manipulation');
+        $('.video-description').text('3D flow reconstruction for ' + thumbnailLabel.toLowerCase() + ' manipulation task.');
+        
+        // Update Viser iframe source
+        var viserIframe = document.getElementById('viser-iframe');
+        viserIframe.src = viserSrc;
+        
+        // Update Viser info
+        $('.viser-title').text('3D Object Flow - ' + thumbnailLabel);
+        $('.viser-description').text('Interactive 3D visualization of reconstructed ' + thumbnailLabel.toLowerCase() + ' object trajectories and flow fields.');
+    });
+    
+    // Initialize with first thumbnail as active
+    $('.thumbnail-item').first().trigger('click');
+}

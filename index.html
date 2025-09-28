@@ -109,19 +109,122 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <!-- Video. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Video</h2>
+        <div class="content has-text-centered">
+          <div class="video-container">
+            <video controls playsinline width="100%" height="400" style="display:block; margin:auto;">
+              <source src="./static/videos/overview_video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
 
     <!-- Method. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Dream2Flow</h2>
-
         <div class="content has-text-justified">
           <p>
-          </p>
+            <img src="./static/images/method.png" alt="Dream2Flow Method Overview" style="width:100%; display:block; margin:auto; margin-bottom: 2em;">
+            Given a task instruction and an initial RGB-D observation, an image-to-video model synthesizes video frames conditioned on the instruction. We additionally obtain object masks, video depth, and point tracking from vision foundation models, which are used to reconstruct 3D object flow. 
+            Finally, a model-based controller tracks the 3D object flow to generate executable actions.
+        </p>
         </div>
       </div>
     </div>
     <!--/ Method. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- 3D Flow Visualization. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">3D Flow Visualization</h2>
+        <div class="content has-text-justified">
+          <p>
+            Interactive 3D visualizations of object flow trajectories reconstructed from generated videos. 
+            Click on different thumbnails to explore various manipulation scenarios and their corresponding 3D object motions.
+          </p>
+        </div>
+        
+        <!-- Visualization Widget -->
+        <div class="visualization-widget">
+          <div class="columns is-vcentered">
+            <!-- Thumbnail Scrollbar -->
+            <div class="column is-2">
+              <div class="thumbnail-container">
+                <div class="thumbnail-scroll">
+                  <div class="thumbnail-item active" data-video="video1.mp4" data-viser="https://example.com/viser1">
+                    <img src="./static/images/thumb1.jpg" alt="Thumbnail 1">
+                    <div class="thumbnail-label">Rigid Object</div>
+                  </div>
+                  <div class="thumbnail-item" data-video="video2.mp4" data-viser="https://example.com/viser2">
+                    <img src="./static/images/thumb2.jpg" alt="Thumbnail 2">
+                    <div class="thumbnail-label">Articulated</div>
+                  </div>
+                  <div class="thumbnail-item" data-video="video3.mp4" data-viser="https://example.com/viser3">
+                    <img src="./static/images/thumb3.jpg" alt="Thumbnail 3">
+                    <div class="thumbnail-label">Deformable</div>
+                  </div>
+                  <div class="thumbnail-item" data-video="video4.mp4" data-viser="https://example.com/viser4">
+                    <img src="./static/images/thumb4.jpg" alt="Thumbnail 4">
+                    <div class="thumbnail-label">Granular</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Video Player -->
+            <div class="column is-4">
+              <div class="video-container">
+                <video id="main-video" controls width="100%" height="300">
+                  <source src="./static/videos/video1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-info">
+                  <h4 class="video-title">Rigid Object Manipulation</h4>
+                  <p class="video-description">3D flow reconstruction for rigid object manipulation task.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Viser Visualization -->
+            <div class="column is-6">
+              <div class="viser-container">
+                <iframe 
+                  id="viser-iframe"
+                  src="https://example.com/viser1" 
+                  width="100%" 
+                  height="400"
+                  frameborder="0"
+                  allowfullscreen>
+                </iframe>
+                <div class="viser-info">
+                  <h4 class="viser-title">3D Object Flow</h4>
+                  <p class="viser-description">Interactive 3D visualization of reconstructed object trajectories and flow fields.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ 3D Flow Visualization. -->
 
   </div>
 </section>

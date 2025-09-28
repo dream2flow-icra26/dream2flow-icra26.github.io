@@ -155,3 +155,137 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+/* 3D Flow Visualization Widget Styles */
+.visualization-widget {
+  margin-top: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background: #fafafa;
+}
+
+.thumbnail-container {
+  height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.thumbnail-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.thumbnail-item {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 8px;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.thumbnail-item:hover {
+  border-color: #3273dc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.thumbnail-item.active {
+  border-color: #3273dc;
+  background: #f0f8ff;
+}
+
+.thumbnail-item img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.thumbnail-label {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 5px;
+  color: #333;
+}
+
+.video-container {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.video-container video {
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.video-info {
+  text-align: center;
+}
+
+.video-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.video-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.viser-container {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.viser-container iframe {
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.viser-info {
+  text-align: center;
+}
+
+.viser-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.viser-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Custom scrollbar for thumbnail container */
+.thumbnail-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.thumbnail-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.thumbnail-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.thumbnail-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
