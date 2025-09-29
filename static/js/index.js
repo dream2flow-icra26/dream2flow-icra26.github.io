@@ -101,16 +101,14 @@ function initializeVisualizationWidget() {
         videoElement.load(); // Reload the video
         
         // Update video info
-        $('.video-title').text(thumbnailLabel + ' Manipulation');
-        $('.video-description').text('3D flow reconstruction for ' + thumbnailLabel.toLowerCase() + ' manipulation task.');
+        $('.video-title').text(thumbnailLabel + ' Execution');
         
         // Update Viser iframe source
         var viserIframe = document.getElementById('viser-iframe');
         viserIframe.src = viserSrc;
         
         // Update Viser info
-        $('.viser-title').text('3D Object Flow - ' + thumbnailLabel);
-        $('.viser-description').text('Interactive 3D visualization of reconstructed ' + thumbnailLabel.toLowerCase() + ' object trajectories and flow fields.');
+        $('.viser-title').text('3D Object Flow for ' + thumbnailLabel);
     });
     
     // Initialize with first thumbnail as active
