@@ -82,6 +82,15 @@ $(document).ready(function() {
 
 // 3D Flow Visualization Widget Functions
 function initializeVisualizationWidget() {
+    // Add event listener for video end to ensure looping
+    var videoElement = document.getElementById('main-video');
+    videoElement.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play().catch(function(error) {
+            console.log('Loop play prevented:', error);
+        });
+    });
+    
     // Add click event listeners to thumbnail items
     $('.thumbnail-item').on('click', function() {
         // Remove active class from all thumbnails
@@ -99,6 +108,13 @@ function initializeVisualizationWidget() {
         var videoElement = document.getElementById('main-video');
         videoElement.src = './static/videos/' + videoSrc;
         videoElement.load(); // Reload the video
+        
+        // Ensure video plays automatically when loaded
+        videoElement.addEventListener('loadeddata', function() {
+            videoElement.play().catch(function(error) {
+                console.log('Autoplay prevented:', error);
+            });
+        });
         
         // Update video info
         $('.video-title').text(thumbnailLabel + ' Execution');
