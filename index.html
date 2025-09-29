@@ -115,7 +115,7 @@
         <h2 class="title is-3">Video</h2>
         <div class="content has-text-centered">
           <div class="video-container">
-            <video controls playsinline width="100%" height="400" style="display:block; margin:auto;">
+            <video controls playsinline preload="metadata" width="100%" height="400" style="display:block; margin:auto;">
               <source src="./static/videos/overview_video.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -239,6 +239,48 @@
       </div>
     </div>
     <!--/ 3D Flow Visualization. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Same Scene, Multiple Tasks. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Same Scene, Multiple Tasks</h2>
+        <div class="content has-text-centered">
+          <p>Dream2Flow inherits the ability to follow different instructions in the same scene from video generation models.</p>
+        </div>
+
+        <div class="columns is-multiline is-variable is-1">
+            <div class="column is-one-third">
+              <video controls playsinline autoplay loop muted width="100%" style="display:block; margin:auto;">
+                <source src="./static/videos/donut_multitask.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            <p class="has-text-centered" style="margin-top: 0.5rem;">Move the donut to the <span style="color: #27ae60;">green bowl</span>.</p>
+          </div>
+
+          <div class="column is-one-third">
+              <video controls playsinline autoplay loop muted width="100%" style="display:block; margin:auto;">
+                <source src="./static/videos/bread_multitask.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            <p class="has-text-centered" style="margin-top: 0.5rem;">Put the bread in the <span style="color: #4169E1;">light blue bowl</span>.</p>
+          </div>
+
+          <div class="column is-one-third">
+              <video controls playsinline autoplay loop muted width="100%" style="display:block; margin:auto;">
+                <source src="./static/videos/mug_multitask.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            <p class="has-text-centered" style="margin-top: 0.5rem;">Place the mug in the <span style="color: #27ae60;">green bowl</span>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Same Scene, Multiple Tasks. -->
 
   </div>
 </section>

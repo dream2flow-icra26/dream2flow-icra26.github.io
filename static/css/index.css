@@ -223,6 +223,10 @@ body {
 .video-container video {
   border-radius: 6px;
   margin-bottom: 1rem;
+  /* Ensure native controls are interactive and above any siblings */
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
 }
 
 .video-info {
